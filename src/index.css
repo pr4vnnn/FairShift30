@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Accessibility Modes */
+body.text-size-large {
+  font-size: 1.125rem;
+}
+
+body.large-touch-mode button,
+body.large-touch-mode a,
+body.large-touch-mode input,
+body.large-touch-mode select {
+  min-height: 48px;
+  font-size: 1rem;
+}
+
+/* Print styles for payslip export */
+@media print {
+  header, nav, aside, .no-print, button {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .printable-payslip {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+}
